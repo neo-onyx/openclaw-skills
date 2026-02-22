@@ -1,0 +1,10 @@
+# Add your brand fonts here
+# Supported formats: .otf, .ttf, .woff, .woff2
+# 
+# Example structure:
+# - YourFont-Regular.otf
+# - YourFont-Medium.otf
+# - YourFont-Bold.otf
+#
+# Then update skills/page-designer/assets/example-design-system.css
+# to reference your font files.

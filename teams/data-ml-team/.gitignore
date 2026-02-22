@@ -1,0 +1,6 @@
+.env
+output/
+*.log
+*.pkl
+*.pt
+*.onnx

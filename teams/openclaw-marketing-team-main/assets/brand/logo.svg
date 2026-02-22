@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 60" width="200" height="60">
+  <!-- PLACEHOLDER LOGO - Replace with your brand logo -->
+  <rect width="200" height="60" fill="#f0f0f0" rx="8"/>
+  <text x="100" y="35" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" fill="#666">
+    Your Logo Here
+  </text>
+</svg>

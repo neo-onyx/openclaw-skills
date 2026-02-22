@@ -1,0 +1,17 @@
+# Environment (contains secrets)
+.env
+.env.*
+!.env.example
+
+# macOS
+.DS_Store
+
+# Output files
+output/
+
+# Node modules
+node_modules/
+
+# IDE
+.idea/
+.vscode/
