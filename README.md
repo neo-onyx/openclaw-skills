@@ -1,104 +1,85 @@
-## What to tell your agent (OpenClaw, Clawdbot, Cursor)
-
-Send your agent to this repo, then paste one of these (the lines in bold are labels; the code blocks are what to paste):
-
-**Option A — short (agent already has the repo open):**
-```
-Read START_HERE.md then AGENTS.md in this repo. You now have nine team pipelines (Marketing, Product, Data/ML, DevOps, Security, Docs, Code Migration, Financial, CEO/Executive). List them and offer to run one. When I say which pipeline and give you the input, use ENTRY-POINTS.md to open the right SKILL and run it start to finish per AGENTS.md.
-```
-
-**Option B — with repo link (agent needs to open the repo first):**
-```
-Open this repo: [paste the repo URL, e.g. https://github.com/your-org/openclaw-skills]. Then read START_HERE.md then AGENTS.md. You are loading the openclaw-skills library — you get nine team pipelines. Learn them, then tell me what you can do and offer to run one. When I pick a pipeline and give input, use ENTRY-POINTS.md to find the SKILL file and execute the full pipeline per AGENTS.md.
-```
-
-**Option C — “go and learn”:**
-```
-Go to this repo: [paste repo URL]. Read START_HERE.md then AGENTS.md. That’s your onboarding — you’ll have nine pipelines (marketing, product, data/ML, DevOps, security, docs, code migration, financial, exec). After you’ve read them, come back and tell me your capabilities and ask which pipeline I want to run and what input I have. Then run whatever I choose using ENTRY-POINTS.md and AGENTS.md.
-```
-
-In options B and C, replace `[paste repo URL]` with your actual repo link (e.g. the GitHub or GitLab URL).  
-That’s it — the agent will bootstrap, list its capabilities, and run any pipeline you ask for.
-
----
-
 <div align="center">
 
 # OpenClaw Skills
 
-**Nine AI team pipelines for your agents.**  
-Drop-in skills for [Clawdbot](https://github.com/anthropics/claude-code), OpenClaw, [Cursor](https://cursor.com), and other AI coding agents.
+**Nine expert teams inside your agent.** One slash command → full pipeline.
 
-One entry point → full pipeline. From PRD to shipped feature, incident to post-mortem, or data to model card.
+*PRD → code. Incident → post-mortem. Data → model card. Budget → report. No plugins. No API keys. Just point your agent here.*
 
-[Quick Start](#-quick-start) · [Teams](#-teams) · [Usage](#-usage) · [Docs](#-docs)
+[Tell your agent ↓](#-tell-your-agent) · [Quick Start](#-quick-start) · [Teams](#-teams) · [Docs](#-docs)
 
 </div>
 
 ---
 
-## What is this?
+## ✨ Tell your agent
 
-This repo is a **skills library**: each “team” is a **pipeline of roles** (orchestrators + workers) that hand off to each other. You invoke **one entry-point skill** with your input; the agent follows the workflow, calls sub-skills, and produces the full deliverable.
-
-- **No custom infra.** Skills are markdown (SKILL.md) + your agent. Copy the `skills/` you need into your workspace, or point your agent at this repo.
-- **Works with any agent** that can read files and follow instructions. Cursor, Clawdbot, OpenClaw, or any LLM with access to the repo.
-- **Nine teams** covering product, data/ML, DevOps, security, docs, migration, finance, exec, and marketing.
-- **Slash commands:** Each pipeline is invoked as a `/command` (e.g. `/product_analyst`, `/financial_analyst`). To show these as **Telegram** (or other) bot commands, use **[COMMANDS.md](COMMANDS.md)** — full list plus how to register them with the Telegram Bot API.
-
-<table>
-<tr>
-<td width="50%">
-
-**Example: Full-Stack Product**
+**Copy the block below. Paste it into Cursor, Clawdbot, or OpenClaw. Your agent gets nine pipelines and will offer to run one.**
 
 ```
-/product_analyst docs/prd.md
-     ↓
-  requirements + user stories
-     ↓
-  /tech_lead → API + schema + tickets
-     ↓
-  /backend_dev → implementation + tests
-     ↓
-  /frontend_dev → UI + integration
-     ↓
-  /qa_reviewer → test plan, PR checklist, changelog
+Read START_HERE.md then AGENTS.md in this repo. You now have nine team pipelines (Marketing, Product, Data/ML, DevOps, Security, Docs, Code Migration, Financial, CEO/Executive). List them and offer to run one. When I say which pipeline and give you the input, use ENTRY-POINTS.md to open the right SKILL and run it start to finish per AGENTS.md.
 ```
 
-</td>
-<td width="50%">
+**That’s it.** The agent bootstraps, shows you what it can do, and runs whichever pipeline you pick.
 
-**Example: Data/ML**
+<details>
+<summary><strong>Agent doesn’t have this repo open? Use this instead.</strong></summary>
 
 ```
-/data_analyst data/training.csv
-     ↓
-  profile + EDA + schema
-     ↓
-  /ml_engineer → feature spec + training script
-     ↓
-  /mlops → deploy + monitor + retrain
-     ↓
-  /report_owner → model card + metric report
+Open this repo: https://github.com/neo-onyx/openclaw-skills. Then read START_HERE.md then AGENTS.md. You are loading the openclaw-skills library — you get nine team pipelines. Learn them, then tell me what you can do and offer to run one. When I pick a pipeline and give input, use ENTRY-POINTS.md to find the SKILL file and execute the full pipeline per AGENTS.md.
 ```
 
-</td>
-</tr>
-</table>
+</details>
+
+<details>
+<summary><strong>“Go and learn” — agent fetches the repo itself</strong></summary>
+
+```
+Go to this repo: https://github.com/neo-onyx/openclaw-skills. Read START_HERE.md then AGENTS.md. That’s your onboarding — you’ll have nine pipelines (marketing, product, data/ML, DevOps, security, docs, code migration, financial, exec). After you’ve read them, come back and tell me your capabilities and ask which pipeline I want to run and what input I have. Then run whatever I choose using ENTRY-POINTS.md and AGENTS.md.
+```
+
+</details>
+
+---
+
+## Why this?
+
+| | |
+|--|--|
+| **No infra** | Skills are markdown. Your agent reads them and runs. No servers, no API keys. |
+| **Any agent** | [Cursor](https://cursor.com), [Clawdbot](https://github.com/anthropics/claude-code), OpenClaw, or any LLM that can read files. |
+| **One entry point** | You say `/product_analyst` and hand over a PRD. The agent runs the full chain: requirements → design → backend → frontend → QA. |
+| **Nine teams** | Product, Data/ML, DevOps, Security, Docs, Migration, Finance, Exec, Marketing. Each is a pipeline of roles that hand off. |
+| **Slash commands** | Use [COMMANDS.md](COMMANDS.md) to expose these as Telegram (or other) bot commands. |
+
+---
+
+## Teams
+
+| Team | Command | What you get |
+|------|---------|--------------|
+| **Marketing** | `/ads_analyst` | Competitor ads → brand → campaign → creative → Meta Ads |
+| **Full-Stack Product** | `/product_analyst` | PRD → requirements → design → backend → frontend → QA |
+| **Data/ML** | `/data_analyst` | Data profile → ML design → MLOps → model card & report |
+| **DevOps/SRE** | `/incident_triager` | Incident → runbook → post-mortem → SLO/chaos |
+| **Security** | `/threat_researcher` | Scan → architecture → remediation → compliance |
+| **Docs/DevRel** | `/api_explorer` | OpenAPI → reference docs → samples → publish |
+| **Code Migration** | `/codebase_analyst` | Analyze → plan → refactor → verify |
+| **Financial** | `/financial_analyst` | Actuals → budget/forecast → compliance → reporting |
+| **CEO/Executive** | `/strategy_lead` | OKRs → board → IR → exec briefing |
 
 ---
 
 ## Quick Start
 
-**1. Clone or copy this repo.**
+**1. Clone**
 
 ```bash
-git clone https://github.com/your-org/openclaw-skills.git
+git clone https://github.com/neo-onyx/openclaw-skills.git
 cd openclaw-skills
 ```
 
-**2. Merge all skills into your project** (so your agent can see every pipeline):
+**2. Merge skills into your project** (optional — so your agent sees every pipeline in one place)
 
 ```powershell
 # PowerShell
@@ -110,84 +91,46 @@ cd openclaw-skills
 ./scripts/copy-all-skills.sh /path/to/your/project/skills
 ```
 
-**3. In your agent,** invoke the entry point for the team you want:
+**3. Tell your agent** — Use the [copy-paste block above](#-tell-your-agent). Or invoke a pipeline directly, e.g.:
 
-| You want to…                    | Run this |
-|---------------------------------|----------|
-| Turn a PRD into code + QA        | `/product_analyst path/to/prd.md` |
-| Go from data to model + report   | `/data_analyst path/to/data.csv` |
-| Run incident → post-mortem → SLO | `/incident_triager` then paste alert |
-| Scan repo → compliance report    | `/threat_researcher path/to/repo` |
-| Build API docs + samples        | `/api_explorer path/to/openapi.yaml` |
-| Plan a code migration            | `/codebase_analyst path/to/repo` |
-| Actuals → budget → reporting     | `/financial_analyst Q1-2025` |
-| OKRs → board → IR → briefing     | `/strategy_lead Q1-2025` |
-| Competitor ads → campaign → Meta | `/ads_analyst <Meta Ad Library URL>` |
-
-That’s it. The agent loads the right SKILL, runs the workflow, and hands off between roles as defined in each team.
+| You want… | You run… |
+|-----------|-----------|
+| PRD → code + QA | `/product_analyst path/to/prd.md` |
+| Data → model + report | `/data_analyst path/to/data.csv` |
+| Incident → post-mortem | `/incident_triager` then paste alert |
+| Repo → compliance report | `/threat_researcher path/to/repo` |
+| OpenAPI → docs + samples | `/api_explorer path/to/openapi.yaml` |
+| Migration plan + refactor | `/codebase_analyst path/to/repo` |
+| Actuals → budget → report | `/financial_analyst Q1-2025` |
+| OKRs → board → briefing | `/strategy_lead Q1-2025` |
+| Ads → campaign → Meta | `/ads_analyst <Meta Ad Library URL>` |
 
 ---
 
-## Teams
+## How it works
 
-| Team | Entry point | What it does |
-|------|-------------|--------------|
-| **Marketing** | `/ads_analyst` | Competitor ads → brand → campaign → creative → Meta Ads |
-| **Full-Stack Product** | `/product_analyst` | PRD → requirements → design → backend → frontend → QA |
-| **Data/ML** | `/data_analyst` | Data profile → ML design → MLOps → model card & report |
-| **DevOps/SRE** | `/incident_triager` | Incident → runbook → post-mortem → SLO/chaos |
-| **Security** | `/threat_researcher` | Scan → architecture → remediation → compliance |
-| **Docs/DevRel** | `/api_explorer` | OpenAPI → reference docs → samples/tutorials → publish |
-| **Code Migration** | `/codebase_analyst` | Analyze → plan → refactor → verify |
-| **Financial** | `/financial_analyst` | Actuals → budget/forecast → compliance → reporting |
-| **CEO/Executive** | `/strategy_lead` | OKRs → board → IR → exec briefing |
+Each **team** is a pipeline of **roles** (orchestrator + workers). You invoke **one entry-point skill**; the agent opens the right `SKILL.md`, follows the workflow, calls sub-skills, and produces the deliverable. All skills live under **`teams/<team>/skills/`** — one folder per skill, each with a `SKILL.md` that defines role, phases, and handoffs. Full index: **[teams/SKILLS-INDEX.md](teams/SKILLS-INDEX.md)**.
 
-All teams live under **[`teams/`](teams/)**. Each team folder has a `skills/` subfolder with orchestrator and worker SKILLs. Full index: **[teams/SKILLS-INDEX.md](teams/SKILLS-INDEX.md)**.
+**Usage:** Copy the merged `skills/` into your project (script above), or open this repo in your workspace and point the agent at `teams/*/skills/`. Cursor, Clawdbot, and OpenClaw all work. See [HOW-TO-RUN-TEAMS.md](HOW-TO-RUN-TEAMS.md) for details.
 
 ---
 
-## Usage
-
-### Option A: Copy skills into your project (recommended)
-
-Run the script from this repo root (see [Quick Start](#-quick-start)). Your project gets one merged `skills/` tree; your agent resolves e.g. `/product_analyst` to `skills/product-analyst/SKILL.md` and follows it.
-
-### Option B: Use this repo as the skills source
-
-- **Cursor:** Open this repo (or add it as a workspace folder). In chat: *“Skills are in `teams/*/skills/`. Run the financial team pipeline: start with `financial_analyst` for Q1-2025.”* The agent reads the SKILLs and runs the workflow.
-- **Clawdbot / OpenClaw:** Copy this repo (or the merged `skills/` from the script) into the workspace where the agent runs, then use the slash commands from the table above.
-
-### Manual copy (no script)
-
-Copy each team’s skills into your project’s `skills/` folder:
-
-```bash
-cp -r teams/fullstack-product-team/skills/* /path/to/project/skills/
-cp -r teams/data-ml-team/skills/* /path/to/project/skills/
-# ... repeat for each team you need
-```
-
----
-
-## Repo structure
+## Repo layout
 
 ```
 openclaw-skills/
-├── README.md                 ← you are here
-├── START_HERE.md             ← agent: read this first, then AGENTS.md
-├── AGENTS.md                 ← full instructions for running any pipeline
-├── CAPABILITIES.md           ← "what can you do?" — 9 pipelines + inputs
-├── ENTRY-POINTS.md           ← slash command → exact SKILL path
-├── .cursorrules              ← Cursor: bootstrap via START_HERE + AGENTS
-├── HOW-TO-RUN-TEAMS.md       ← setup and invocation
-├── .gitignore
+├── README.md           ← you are here
+├── START_HERE.md       ← agent: read first, then AGENTS.md
+├── AGENTS.md           ← how to resolve /command → SKILL and run pipelines
+├── CAPABILITIES.md     ← "what can you do?" — 9 pipelines + inputs
+├── ENTRY-POINTS.md     ← slash command → exact SKILL path
+├── COMMANDS.md         ← Telegram/CLI: register these as bot commands
+├── .cursorrules        ← Cursor: bootstrap via START_HERE + AGENTS
 ├── scripts/
-│   ├── copy-all-skills.ps1   # merge all skills into a target folder
+│   ├── copy-all-skills.ps1
 │   └── copy-all-skills.sh
 └── teams/
-    ├── README.md
-    ├── HOW-TO-RUN-TEAMS.md
-    ├── SKILLS-INDEX.md       ← every skill (orchestrators + workers)
+    ├── SKILLS-INDEX.md
     ├── openclaw-marketing-team-main/
     ├── fullstack-product-team/
     ├── data-ml-team/
@@ -199,39 +142,20 @@ openclaw-skills/
     └── ceo-executive-team/
 ```
 
-Each team folder contains a `skills/` directory with one subfolder per skill (e.g. `product-analyst/`, `tech-lead/`), each with a `SKILL.md` that defines the role, workflow, and handoffs.
-
----
-
-## Entry points at a glance
-
-| Command | Input | Pipeline |
-|---------|--------|----------|
-| `/ads_analyst` | Meta Ad Library URL | Marketing |
-| `/product_analyst` | PRD or brief path | Full-Stack Product |
-| `/data_analyst` | Dataset path | Data/ML |
-| `/incident_triager` | Alert or log (paste) | DevOps/SRE |
-| `/threat_researcher` | Repo path | Security |
-| `/api_explorer` | OpenAPI URL or path | Docs/DevRel |
-| `/codebase_analyst` | Repo path | Code Migration |
-| `/financial_analyst` | Period or data path | Financial |
-| `/strategy_lead` | Period or context | CEO/Executive |
-
 ---
 
 ## Docs
 
-| Doc | Description |
+| Doc | Use it for |
 |-----|-------------|
-| **[START_HERE.md](START_HERE.md)** | **Agent bootstrap:** Read this first, then AGENTS.md. You get 9 pipelines and how to present yourself. |
-| **[AGENTS.md](AGENTS.md)** | **Full instructions:** Where skills live, how to resolve any `/command` → SKILL file, how to run pipelines. |
-| **[CAPABILITIES.md](CAPABILITIES.md)** | **"What can you do?"** — List of 9 pipelines with entry points and inputs. Use when the user asks. |
-| [ENTRY-POINTS.md](ENTRY-POINTS.md) | One-table lookup: slash command → exact SKILL path |
-| [COMMANDS.md](COMMANDS.md) | **Slash commands for Telegram/CLI:** List + descriptions for registering bot commands |
-| [.cursorrules](.cursorrules) | Cursor rule: read START_HERE → AGENTS; own the 9 pipelines; execute per AGENTS.md |
-| [HOW-TO-RUN-TEAMS.md](HOW-TO-RUN-TEAMS.md) | Setup and invocation (for humans) |
-| [teams/SKILLS-INDEX.md](teams/SKILLS-INDEX.md) | Full list of every skill (orchestrators + workers) |
-| [teams/README.md](teams/README.md) | Teams overview and copy script |
+| [**START_HERE.md**](START_HERE.md) | Agent bootstrap: read first, then AGENTS.md |
+| [**AGENTS.md**](AGENTS.md) | Full instructions: resolve `/command` → SKILL, run pipelines |
+| [**CAPABILITIES.md**](CAPABILITIES.md) | "What can you do?" — 9 pipelines + entry points + inputs |
+| [ENTRY-POINTS.md](ENTRY-POINTS.md) | One-table lookup: slash command → SKILL path |
+| [COMMANDS.md](COMMANDS.md) | Register slash commands in Telegram or other bots |
+| [.cursorrules](.cursorrules) | Cursor rule: START_HERE → AGENTS, own the 9 pipelines |
+| [HOW-TO-RUN-TEAMS.md](HOW-TO-RUN-TEAMS.md) | Setup and invocation |
+| [teams/SKILLS-INDEX.md](teams/SKILLS-INDEX.md) | Every skill (orchestrators + workers) |
 
 ---
 
