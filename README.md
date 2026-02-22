@@ -1,8 +1,6 @@
----
-
 ## What to tell your agent (OpenClaw, Clawdbot, Cursor)
 
-**Send your agent to this repo, then paste one of these:**
+Send your agent to this repo, then paste one of these (the lines in bold are labels; the code blocks are what to paste):
 
 **Option A — short (agent already has the repo open):**
 ```
@@ -46,6 +44,7 @@ This repo is a **skills library**: each “team” is a **pipeline of roles** (o
 - **No custom infra.** Skills are markdown (SKILL.md) + your agent. Copy the `skills/` you need into your workspace, or point your agent at this repo.
 - **Works with any agent** that can read files and follow instructions. Cursor, Clawdbot, OpenClaw, or any LLM with access to the repo.
 - **Nine teams** covering product, data/ML, DevOps, security, docs, migration, finance, exec, and marketing.
+- **Slash commands:** Each pipeline is invoked as a `/command` (e.g. `/product_analyst`, `/financial_analyst`). To show these as **Telegram** (or other) bot commands, use **[COMMANDS.md](COMMANDS.md)** — full list plus how to register them with the Telegram Bot API.
 
 <table>
 <tr>
@@ -228,6 +227,7 @@ Each team folder contains a `skills/` directory with one subfolder per skill (e.
 | **[AGENTS.md](AGENTS.md)** | **Full instructions:** Where skills live, how to resolve any `/command` → SKILL file, how to run pipelines. |
 | **[CAPABILITIES.md](CAPABILITIES.md)** | **"What can you do?"** — List of 9 pipelines with entry points and inputs. Use when the user asks. |
 | [ENTRY-POINTS.md](ENTRY-POINTS.md) | One-table lookup: slash command → exact SKILL path |
+| [COMMANDS.md](COMMANDS.md) | **Slash commands for Telegram/CLI:** List + descriptions for registering bot commands |
 | [.cursorrules](.cursorrules) | Cursor rule: read START_HERE → AGENTS; own the 9 pipelines; execute per AGENTS.md |
 | [HOW-TO-RUN-TEAMS.md](HOW-TO-RUN-TEAMS.md) | Setup and invocation (for humans) |
 | [teams/SKILLS-INDEX.md](teams/SKILLS-INDEX.md) | Full list of every skill (orchestrators + workers) |

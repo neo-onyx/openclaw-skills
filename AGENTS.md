@@ -35,7 +35,8 @@ Use this table to open the **first** SKILL for a pipeline. All paths are relativ
 | `/financial_analyst` or "financial team" / "finance" | `teams/financial-team/skills/financial-analyst/SKILL.md` |
 | `/strategy_lead` or "CEO team" / "executive team" | `teams/ceo-executive-team/skills/strategy-lead/SKILL.md` |
 
-**Rule:** Slash commands use **underscores** (`product_analyst`). Folder names use **hyphens** (`product-analyst`). When in doubt, replace underscores with hyphens and look for that folder under the team’s `skills/` directory.
+**Rule:** Slash commands use **underscores** (`product_analyst`). Folder names use **hyphens** (`product-analyst`). When in doubt, replace underscores with hyphens and look for that folder under the team’s `skills/` directory.  
+To expose these as **Telegram** (or other) bot slash commands, see [COMMANDS.md](COMMANDS.md).
 
 ---
 
