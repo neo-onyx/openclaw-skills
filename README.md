@@ -1,4 +1,28 @@
-**→ Agent sent here? Read [START_HERE.md](START_HERE.md) then [AGENTS.md](AGENTS.md). You get 9 pipelines; list them, offer to run one, execute per AGENTS.md.**
+---
+
+## What to tell your agent (OpenClaw, Clawdbot, Cursor)
+
+**Send your agent to this repo, then paste one of these:**
+
+**Option A — short (agent already has the repo open):**
+```
+Read START_HERE.md then AGENTS.md in this repo. You now have nine team pipelines (Marketing, Product, Data/ML, DevOps, Security, Docs, Code Migration, Financial, CEO/Executive). List them and offer to run one. When I say which pipeline and give you the input, use ENTRY-POINTS.md to open the right SKILL and run it start to finish per AGENTS.md.
+```
+
+**Option B — with repo link (agent needs to open the repo first):**
+```
+Open this repo: [paste the repo URL, e.g. https://github.com/your-org/openclaw-skills]. Then read START_HERE.md then AGENTS.md. You are loading the openclaw-skills library — you get nine team pipelines. Learn them, then tell me what you can do and offer to run one. When I pick a pipeline and give input, use ENTRY-POINTS.md to find the SKILL file and execute the full pipeline per AGENTS.md.
+```
+
+**Option C — “go and learn”:**
+```
+Go to this repo: [paste repo URL]. Read START_HERE.md then AGENTS.md. That’s your onboarding — you’ll have nine pipelines (marketing, product, data/ML, DevOps, security, docs, code migration, financial, exec). After you’ve read them, come back and tell me your capabilities and ask which pipeline I want to run and what input I have. Then run whatever I choose using ENTRY-POINTS.md and AGENTS.md.
+```
+
+In options B and C, replace `[paste repo URL]` with your actual repo link (e.g. the GitHub or GitLab URL).  
+That’s it — the agent will bootstrap, list its capabilities, and run any pipeline you ask for.
+
+---
 
 <div align="center">
 
@@ -10,10 +34,6 @@ Drop-in skills for [Clawdbot](https://github.com/anthropics/claude-code), OpenCl
 One entry point → full pipeline. From PRD to shipped feature, incident to post-mortem, or data to model card.
 
 [Quick Start](#-quick-start) · [Teams](#-teams) · [Usage](#-usage) · [Docs](#-docs)
-
-**Sending an agent here (OpenClaw, Clawdbot, Cursor)?**  
-Tell the agent: **"Read [START_HERE.md](START_HERE.md) then [AGENTS.md](AGENTS.md). You have nine team pipelines; list them and offer to run one. Use [ENTRY-POINTS.md](ENTRY-POINTS.md) to resolve any pipeline to a SKILL file, and execute per AGENTS.md."**  
-That’s all the agent needs to become the full skilled agent.
 
 </div>
 
