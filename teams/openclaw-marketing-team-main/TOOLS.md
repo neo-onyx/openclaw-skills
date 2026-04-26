@@ -31,7 +31,9 @@ This file explains how to set up the APIs needed for the marketing workflow.
 ### Test Your Key
 
 ```bash
-curl "https://generativelanguage.googleapis.com/v1beta/models?key=$GEMINI_API_KEY" | head -20
+# Pass the key as a header to avoid exposure in shell history and process lists
+curl -H "x-goog-api-key: $GEMINI_API_KEY" \
+  "https://generativelanguage.googleapis.com/v1beta/models" | head -20
 ```
 
 ---
@@ -91,11 +93,13 @@ curl "https://generativelanguage.googleapis.com/v1beta/models?key=$GEMINI_API_KE
 ### Test Your Setup
 
 ```bash
-# Test token validity
-curl "https://graph.facebook.com/v21.0/me?access_token=$META_ACCESS_TOKEN"
+# Test token validity — pass token as Authorization header to avoid shell history exposure
+curl -H "Authorization: Bearer $META_ACCESS_TOKEN" \
+  "https://graph.facebook.com/v21.0/me"
 
 # Test ad account access
-curl "https://graph.facebook.com/v21.0/$META_AD_ACCOUNT_ID?access_token=$META_ACCESS_TOKEN"
+curl -H "Authorization: Bearer $META_ACCESS_TOKEN" \
+  "https://graph.facebook.com/v21.0/$META_AD_ACCOUNT_ID"
 ```
 
 ### API Version
